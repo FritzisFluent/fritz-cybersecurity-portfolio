@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="cyber-card">
             <h3 className="text-2xl font-bold mb-6 text-cyber-primary">Let's Connect</h3>
-            <p className="text-cyber-light/80 mb-8">
+            <p className="mb-8">
               I'm currently open to cybersecurity analyst roles, consulting contracts, and opportunities 
               in the U.S. Space Force or Air Force Cybersecurity division.
             </p>

@@ -25,13 +25,13 @@ const Hero = () => {
           {/* Text content */}
           <div className="w-full lg:w-7/12 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
             <div className="terminal-text text-lg mb-2">&gt; Hello, my name is</div>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-cyber-light">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
               Fritz Gerald Alexandre
             </h1>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-cyber-primary">
               Cybersecurity Analyst & Technology Consultant
             </h2>
-            <p className="text-xl text-cyber-light/80 mb-8 max-w-2xl">
+            <p className="text-xl mb-8 max-w-2xl">
               U.S.-based professional with over 4 years of experience in IT support, incident response, 
               and securing enterprise environments. CompTIA Security+ and CySA+ certified.
             </p>
@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <a href="#about" aria-label="Scroll down">
           <ArrowDown className="h-6 w-6 text-cyber-primary" />
         </a>

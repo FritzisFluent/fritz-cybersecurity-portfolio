@@ -30,10 +30,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.classList.remove('light', 'dark');
       root.classList.add(systemTheme);
+      document.body.classList.remove('light', 'dark');
+      document.body.classList.add(systemTheme);
       setResolvedTheme(systemTheme);
     } else {
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
+      document.body.classList.remove('light', 'dark');
+      document.body.classList.add(theme);
       setResolvedTheme(theme);
     }
     
@@ -50,6 +54,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const newTheme = mediaQuery.matches ? 'dark' : 'light';
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(newTheme);
+      document.body.classList.remove('light', 'dark');
+      document.body.classList.add(newTheme);
       setResolvedTheme(newTheme);
     };
     

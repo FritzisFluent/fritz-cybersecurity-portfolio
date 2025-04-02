@@ -4,32 +4,25 @@ import CertificationCard from '../ui/CertificationCard';
 const Certifications = () => {
   const certifications = [
     {
-      title: "CompTIA Security+",
-      date: "March 2024"
+      title: "CompTIA Security+"
     },
     {
-      title: "CompTIA CySA+",
-      date: "September 2024"
+      title: "CompTIA CySA+"
     },
     {
-      title: "CompTIA Network+ | A+",
-      date: ""
+      title: "CompTIA Network+ | A+"
     },
     {
-      title: "Cisco Cybersecurity, Linux & Networking Essentials",
-      date: ""
+      title: "Cisco Cybersecurity, Linux & Networking Essentials"
     },
     {
-      title: "IAM Fundamentals with Okta",
-      date: ""
+      title: "IAM Fundamentals with Okta"
     },
     {
-      title: "Mastercard Cybersecurity Job Simulation",
-      date: ""
+      title: "Mastercard Cybersecurity Job Simulation"
     },
     {
-      title: "NDG Linux Unhatched",
-      date: ""
+      title: "NDG Linux Unhatched"
     }
   ];
   
@@ -43,7 +36,6 @@ const Certifications = () => {
             <div key={index} className="animate-fade-in opacity-0" style={{ animationDelay: `${0.1 * index}s` }}>
               <CertificationCard 
                 title={cert.title}
-                date={cert.date}
               />
             </div>
           ))}

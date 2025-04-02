@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,14 +77,19 @@
     scroll-behavior: smooth;
   }
 
-  /* Light mode styles */
+  /* Base styles for both light and dark mode */
   body {
-    @apply bg-slate-50 text-slate-900 font-sans transition-colors duration-300;
+    @apply font-sans transition-colors duration-300;
   }
 
-  /* Dark mode styles (default) */
-  body.dark {
-    @apply bg-cyber-dark text-cyber-light transition-colors duration-300;
+  /* Light mode styles */
+  .light {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  /* Dark mode styles */
+  .dark {
+    @apply bg-cyber-dark text-cyber-light;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -130,11 +136,11 @@
   }
   
   .light .cyber-card {
-    @apply bg-white border-blue-200 hover:border-blue-400;
+    @apply bg-white border-blue-200 hover:border-blue-400 text-slate-900;
   }
 
   .dark .cyber-card {
-    @apply bg-cyber-terminal border-cyber-primary/20 hover:border-cyber-primary/50;
+    @apply bg-cyber-terminal border-cyber-primary/20 hover:border-cyber-primary/50 text-cyber-light;
   }
   
   .skill-pill {
