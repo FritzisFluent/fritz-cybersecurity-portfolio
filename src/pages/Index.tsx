@@ -8,10 +8,19 @@ import Projects from "@/components/sections/Projects";
 import Certifications from "@/components/sections/Certifications";
 import Languages from "@/components/sections/Languages";
 import Contact from "@/components/sections/Contact";
+import { useEffect } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Index = () => {
+  const { setTheme } = useTheme();
+  
+  // Set dark mode as default when page loads
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen bg-cyber-dark text-cyber-light">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <Hero />

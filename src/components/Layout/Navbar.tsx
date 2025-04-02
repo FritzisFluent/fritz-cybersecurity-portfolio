@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Shield, Menu, X } from 'lucide-react';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,18 +47,22 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="nav-link">
               {link.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Navigation Button */}
-        <button onClick={toggleMenu} className="md:hidden text-cyber-light focus:outline-none">
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button onClick={toggleMenu} className="text-cyber-light focus:outline-none">
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
