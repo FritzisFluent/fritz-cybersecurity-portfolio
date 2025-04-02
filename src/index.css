@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -184,7 +183,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-cyber-dark dark:bg-cyber-dark light:bg-slate-200;
+  @apply bg-cyber-dark;
+}
+
+.light ::-webkit-scrollbar-track {
+  @apply bg-slate-200;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
 }
 
 ::-webkit-scrollbar-thumb {
