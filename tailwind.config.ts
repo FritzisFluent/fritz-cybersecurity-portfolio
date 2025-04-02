@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom cybersecurity theme colors
+				cyber: {
+					primary: '#0ea5e9', // Sky blue
+					secondary: '#10b981', // Emerald
+					dark: '#0f172a', // Dark slate blue
+					light: '#f8fafc', // Slate light
+					accent: '#2563eb', // Blue
+					terminal: '#111827', // Dark gray/blue for terminal-like sections
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'typing': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' }
+				},
+				'blink-caret': {
+					'from, to': { borderColor: 'transparent' },
+					'50%': { borderColor: 'currentColor' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'typing': 'typing 3.5s steps(30, end)',
+				'blink-caret': 'blink-caret 0.75s step-end infinite'
 			}
 		}
 	},
