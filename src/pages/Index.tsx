@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen bg-cyber-dark text-cyber-light">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <About />
         <Skills />
