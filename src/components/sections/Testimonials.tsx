@@ -1,4 +1,6 @@
 
+import React from 'react';
+import TestimonialCard from '../ui/TestimonialCard';
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import TestimonialCard from '../ui/TestimonialCard';
 
 const Testimonials = () => {
   const testimonials = [
@@ -28,18 +29,18 @@ const Testimonials = () => {
   ];
   
   return (
-    <section id="testimonials" className="bg-cyber-terminal relative py-16 md:py-24">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-16 md:py-24 px-4 md:px-8">
+      <div className="container mx-auto">
         <h2 className="section-heading mb-10">What Clients Are Saying</h2>
         
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
-              key={index} 
-              className="animate-fade-in opacity-0 h-full"
+              key={index}
+              className="animate-fade-in opacity-0"
               style={{ animationDelay: `${0.1 * index}s` }}
             >
-              <TestimonialCard 
+              <TestimonialCard
                 rating={testimonial.rating}
                 quote={testimonial.quote}
                 author={testimonial.author}
@@ -48,14 +49,14 @@ const Testimonials = () => {
           ))}
         </div>
         
-        {/* Carousel for mobile view */}
+        {/* Mobile carousel */}
         <div className="md:hidden">
-          <Carousel className="w-full max-w-sm mx-auto">
+          <Carousel className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
-                    <TestimonialCard 
+                    <TestimonialCard
                       rating={testimonial.rating}
                       quote={testimonial.quote}
                       author={testimonial.author}
@@ -64,9 +65,9 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-4">
-              <CarouselPrevious className="relative inset-0 translate-y-0 mx-2" />
-              <CarouselNext className="relative inset-0 translate-y-0 mx-2" />
+            <div className="flex justify-center mt-4 gap-4">
+              <CarouselPrevious className="static transform-none" />
+              <CarouselNext className="static transform-none" />
             </div>
           </Carousel>
         </div>
