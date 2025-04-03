@@ -1,21 +1,16 @@
 
-import { Shield } from 'lucide-react';
+import React from 'react';
 
 interface CertificationCardProps {
   title: string;
-  issuer?: string;
+  icon?: React.ReactNode;
 }
 
-const CertificationCard = ({ title, issuer }: CertificationCardProps) => {
+const CertificationCard = ({ title, icon }: CertificationCardProps) => {
   return (
-    <div className="cyber-card flex items-start">
-      <div className="mr-4 mt-1 text-cyber-primary">
-        <Shield className="h-6 w-6" />
-      </div>
-      <div>
-        <h3 className="font-bold text-lg">{title}</h3>
-        {issuer && <p className="text-cyber-secondary text-sm mt-1">{issuer}</p>}
-      </div>
+    <div className="cyber-card flex items-center">
+      {icon && <div className="mr-3">{icon}</div>}
+      <h3 className="font-medium">{title}</h3>
     </div>
   );
 };

@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ rating, quote, author }: TestimonialCardProps) => {
   return (
-    <div className="cyber-card h-full flex flex-col">
+    <div className="cyber-card h-full flex flex-col border border-cyber-primary/20 hover:border-cyber-primary/40 transition-all duration-300 bg-cyber-terminal/80 shadow-lg">
       <div className="flex mb-3">
         {[...Array(5)].map((_, i) => (
           <Star

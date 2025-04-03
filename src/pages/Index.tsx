@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
+import Services from "@/components/sections/Services";
 import Blog from "@/components/sections/Blog";
 import Testimonials from "@/components/sections/Testimonials";
 import Certifications from "@/components/sections/Certifications";
@@ -51,14 +52,16 @@ const Index = () => {
         return <About />;
       case "skills":
         return (
-          <>
+          <div className="pt-0">
             <Skills />
             <Certifications />
             <Languages />
-          </>
+          </div>
         );
       case "projects":
         return <Projects />;
+      case "services":
+        return <Services />;
       case "blog":
         return <Blog />;
       case "testimonials":
@@ -79,7 +82,7 @@ const Index = () => {
       
       <main 
         className={`
-          flex-grow pl-0 md:pl-64 
+          flex-grow pl-0 md:pl-20 lg:pl-64 
           transition-all duration-300 ease-in-out
           relative
         `}

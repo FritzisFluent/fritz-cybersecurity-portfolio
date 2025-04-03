@@ -22,7 +22,7 @@ const Blog = () => {
   ];
   
   return (
-    <section id="blog" className="bg-cyber-dark relative py-16 md:py-24 px-4 md:px-8">
+    <section id="blog" className="bg-cyber-dark relative pt-20 pb-16 md:py-24 px-4 md:px-8">
       <div className="container mx-auto">
         <h2 className="section-heading mb-10">Insights & Intel</h2>
         

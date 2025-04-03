@@ -13,7 +13,7 @@ const BlogCard = ({ title, excerpt, image }: BlogCardProps) => {
   
   return (
     <div 
-      className="cyber-card group relative overflow-hidden flex flex-col h-full"
+      className="cyber-card group relative overflow-hidden flex flex-col h-full shadow-lg border border-cyber-primary/20 hover:border-cyber-primary/50 transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -29,16 +29,20 @@ const Hero = () => {
       </div>
       
       <div className="max-w-6xl mx-auto w-full relative z-10 mt-16 md:mt-0">
-        <div className="flex flex-col items-center text-center">
-          {/* Main content */}
-          <div className="w-full animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
-            <div className="mb-4 flex justify-center">
-              <div className="w-24 h-24 bg-cyber-primary/10 rounded-full flex items-center justify-center mb-2">
-                <span className="text-3xl font-bold text-cyber-primary">FA</span>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          {/* Avatar section */}
+          <div className="flex justify-center md:justify-start mb-8 md:mb-0 md:mr-12">
+            <div className="relative">
+              <div className="w-40 h-40 md:w-48 md:h-48 bg-gradient-to-tr from-cyber-primary to-cyber-secondary rounded-full overflow-hidden flex items-center justify-center border-4 border-cyber-primary/30">
+                <span className="text-5xl md:text-6xl font-bold text-white">FA</span>
               </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyber-primary/30 to-cyber-secondary/30 animate-pulse opacity-70"></div>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+          </div>
+          
+          {/* Text content */}
+          <div className="flex-1 animate-fade-in opacity-0 text-center md:text-left" style={{ animationDelay: '0.2s' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
               Fritz Gerald Alexandre
             </h1>
             
@@ -49,11 +53,11 @@ const Hero = () => {
               </h2>
             </div>
             
-            <p className="text-xl mb-8 max-w-2xl mx-auto mt-4">
+            <p className="text-xl mb-8 max-w-2xl mx-auto md:mx-0 mt-4">
               Securing systems. Empowering people. Bridging tech with global communication.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
               <a 
                 href="#" 
                 className="bg-cyber-primary hover:bg-cyber-primary/90 text-white py-3 px-8 rounded-md font-medium transition-colors duration-300"
