@@ -14,13 +14,19 @@ import { useTheme } from "@/contexts/ThemeContext";
 const Index = () => {
   const { setTheme } = useTheme();
   
-  // Set dark mode as default when page loads
+  // Read saved theme preference when page loads
   useEffect(() => {
-    setTheme("dark");
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme as 'light' | 'dark' | 'system');
+    } else {
+      // Default to dark mode if no preference is saved
+      setTheme("dark");
+    }
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen transition-colors duration-300">
       <Navbar />
       <main className="flex-grow">
         <Hero />

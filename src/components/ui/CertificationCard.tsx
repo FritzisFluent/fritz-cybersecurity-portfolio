@@ -8,7 +8,7 @@ interface CertificationCardProps {
 
 const CertificationCard = ({ title, issuer }: CertificationCardProps) => {
   return (
-    <div className="cyber-card flex items-start">
+    <div className="cyber-card flex items-start transition-all duration-300">
       <div className="mr-4 mt-1 text-cyber-primary">
         <Shield className="h-6 w-6" />
       </div>

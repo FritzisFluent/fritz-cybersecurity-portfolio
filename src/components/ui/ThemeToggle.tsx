@@ -15,9 +15,9 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="border border-cyber-primary/30 rounded-full">
-          <Sun className={`h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all ${resolvedTheme === 'dark' ? 'opacity-0' : 'opacity-100'}`} />
-          <Moon className={`absolute h-[1.2rem] w-[1.2rem] rotate-90 transition-all ${resolvedTheme === 'dark' ? 'opacity-100' : 'opacity-0'}`} />
+        <Button variant="ghost" size="icon" className="border border-cyber-primary/30 rounded-full transition-all duration-300">
+          <Sun className={`h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all duration-300 ${resolvedTheme === 'dark' ? 'opacity-0' : 'opacity-100'}`} />
+          <Moon className={`absolute h-[1.2rem] w-[1.2rem] rotate-90 transition-all duration-300 ${resolvedTheme === 'dark' ? 'opacity-100' : 'opacity-0'}`} />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

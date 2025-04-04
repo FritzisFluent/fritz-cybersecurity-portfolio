@@ -5,6 +5,7 @@
 
 @layer base {
   :root {
+    /* Base light mode variables */
     --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
@@ -111,7 +112,15 @@
 
 @layer components {
   .terminal-text {
-    @apply font-mono text-cyber-secondary;
+    @apply font-mono;
+  }
+  
+  .light .terminal-text {
+    @apply text-slate-700;
+  }
+  
+  .dark .terminal-text {
+    @apply text-cyber-secondary;
   }
   
   .section-heading {
@@ -128,6 +137,13 @@
 
   .section-heading::before {
     content: "> ";
+  }
+  
+  .light .section-heading::before {
+    @apply text-blue-400;
+  }
+  
+  .dark .section-heading::before {
     @apply text-cyber-secondary;
   }
 
@@ -136,7 +152,7 @@
   }
   
   .light .cyber-card {
-    @apply bg-white border-blue-200 hover:border-blue-400 text-slate-900;
+    @apply bg-white border-blue-200 hover:border-blue-400 text-slate-900 shadow-md;
   }
 
   .dark .cyber-card {
@@ -182,6 +198,39 @@
   .badge {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium;
   }
+  
+  .light .badge {
+    @apply bg-slate-100 text-slate-800;
+  }
+  
+  .dark .badge {
+    @apply bg-cyber-terminal text-cyber-light;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply rounded-md font-medium transition-colors duration-300;
+  }
+  
+  .light .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .dark .btn-primary {
+    @apply bg-cyber-primary text-white hover:bg-cyber-primary/90;
+  }
+  
+  .btn-outline {
+    @apply rounded-md font-medium transition-colors duration-300;
+  }
+  
+  .light .btn-outline {
+    @apply border border-slate-300 text-slate-800 hover:bg-slate-100;
+  }
+  
+  .dark .btn-outline {
+    @apply border border-cyber-primary/50 text-cyber-primary hover:bg-cyber-primary/10;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -189,7 +238,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-cyber-dark;
+  @apply transition-colors duration-300;
 }
 
 .light ::-webkit-scrollbar-track {
@@ -201,5 +250,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-cyber-primary/30 rounded hover:bg-cyber-primary/50 transition-all;
+  @apply rounded transition-all duration-300;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  @apply bg-blue-300 hover:bg-blue-400;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-cyber-primary/30 hover:bg-cyber-primary/50;
 }
