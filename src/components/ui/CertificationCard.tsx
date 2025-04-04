@@ -9,12 +9,12 @@ interface CertificationCardProps {
 const CertificationCard = ({ title, issuer }: CertificationCardProps) => {
   return (
     <div className="cyber-card flex items-start transition-all duration-300">
-      <div className="mr-4 mt-1 text-cyber-primary">
+      <div className="mr-4 mt-1 text-blue-600 dark:text-cyber-primary">
         <Shield className="h-6 w-6" />
       </div>
       <div>
         <h3 className="font-bold text-lg">{title}</h3>
-        {issuer && <p className="text-cyber-secondary text-sm mt-1">{issuer}</p>}
+        {issuer && <p className="text-slate-600 dark:text-cyber-secondary text-sm mt-1">{issuer}</p>}
       </div>
     </div>
   );
