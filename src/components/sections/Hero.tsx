@@ -79,12 +79,12 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Professional Photo/Avatar */}
+          {/* Professional Photo/Avatar - Updated with new image */}
           <div className="md:w-2/5 mt-8 md:mt-0 flex justify-center md:justify-end">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-cyber-primary/30 shadow-glow-lg">
                 <img 
-                  src="/lovable-uploads/477f0b1a-153c-4721-9c2d-6a055be5d69c.png"
+                  src="/lovable-uploads/6db220ca-fe70-4632-ba82-721f2efdd415.png"
                   alt="Fritz Gerald Alexandre"
                   className="w-full h-full object-cover"
                 />

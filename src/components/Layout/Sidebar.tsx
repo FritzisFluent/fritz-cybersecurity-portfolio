@@ -9,8 +9,6 @@ import {
   BookOpen, 
   Star, 
   PhoneCall, 
-  Menu, 
-  X, 
   Sun, 
   Moon,
   ChevronLeft,
@@ -26,7 +24,6 @@ interface SidebarProps {
 
 const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   const { theme, setTheme } = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   
@@ -46,8 +43,15 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
   
-  const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
+  
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+  
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
   
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -66,31 +70,18 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   
   const handleSectionClick = (sectionId: string) => {
     onSectionChange(sectionId);
-    if (window.innerWidth < 768) {
-      setIsOpen(false);
-    }
   };
   
   return (
     <>
-      {/* Mobile hamburger menu button */}
-      <button 
-        onClick={toggleSidebar}
-        className="fixed md:hidden z-50 top-4 left-4 p-2 bg-black/70 backdrop-blur-lg dark:bg-cyber-terminal/90 border border-cyber-primary/30 rounded-md shadow-lg"
-        aria-label="Toggle navigation menu"
-      >
-        {isOpen ? <X className="w-6 h-6 text-cyber-primary" /> : <Menu className="w-6 h-6 text-cyber-primary" />}
-      </button>
-      
-      {/* Sidebar */}
+      {/* Sidebar - Now opens/closes on hover */}
       <aside 
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className={`
           fixed top-0 left-0 h-full z-40 transition-all duration-300 ease-in-out
-          ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
           ${isCollapsed && !isHovering ? 'md:w-20' : 'md:w-64'} 
-          w-64 
+          w-20 md:w-64 
           bg-black/70 backdrop-blur-lg dark:bg-cyber-terminal/90 
           border-r border-cyber-primary/30 shadow-xl
         `}
@@ -101,8 +92,8 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
             <Shield className="w-8 h-8 text-cyber-primary" />
           </div>
           <div className={`transition-opacity duration-300 ${isCollapsed && !isHovering ? 'md:opacity-0 md:h-0 md:overflow-hidden' : 'opacity-100 h-auto'}`}>
-            <h1 className="text-lg font-bold">Fritz Gerald Alexandre</h1>
-            <p className="text-sm text-cyber-light/70">Cybersecurity Analyst</p>
+            <h1 className="text-lg font-bold text-center">Fritz Gerald Alexandre</h1>
+            <p className="text-sm text-cyber-light/70 text-center">Cybersecurity Analyst</p>
           </div>
         </div>
         
@@ -119,16 +110,17 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
                       ? 'bg-cyber-primary/20 text-cyber-primary shadow-md border border-cyber-primary/30' 
                       : 'hover:bg-cyber-primary/10 text-cyber-light/80 hover:border hover:border-cyber-primary/20'
                     }
+                    ${isCollapsed && !isHovering ? 'justify-center md:justify-start' : 'justify-start'}
                   `}
                   aria-current={activeSection === item.id ? 'page' : undefined}
                 >
                   <span className={`
                     ${activeSection === item.id ? 'text-cyber-primary' : 'text-cyber-light/60'} 
-                    mr-3 transition-all duration-200
+                    ${isCollapsed && !isHovering ? 'mr-0' : 'mr-3'} transition-all duration-200
                   `}>
                     {item.icon}
                   </span>
-                  <span className={`transition-opacity duration-300 whitespace-nowrap ${isCollapsed && !isHovering ? 'md:opacity-0 md:w-0' : 'opacity-100 w-auto'}`}>
+                  <span className={`transition-opacity duration-300 whitespace-nowrap ${isCollapsed && !isHovering ? 'md:opacity-0 md:w-0 md:hidden' : 'opacity-100 w-auto inline'}`}>
                     {item.label}
                   </span>
                   {activeSection === item.id && (
@@ -152,7 +144,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
         </button>
         
         {/* Theme toggle and other controls */}
-        <div className="p-4 border-t border-cyber-primary/30 flex justify-between">
+        <div className="p-4 border-t border-cyber-primary/30 flex justify-center md:justify-between">
           <button
             onClick={toggleTheme}
             className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-cyber-primary/10 transition-colors"
@@ -168,7 +160,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
           <a 
             href="#" 
             className={`
-              flex items-center justify-center px-4 py-2 bg-cyber-primary text-white rounded-lg hover:bg-cyber-primary/90 transition-colors
+              hidden md:flex items-center justify-center px-4 py-2 bg-cyber-primary text-white rounded-lg hover:bg-cyber-primary/90 transition-colors
               shadow-md
               ${isCollapsed && !isHovering ? 'md:hidden' : 'md:flex'} 
             `}
@@ -178,15 +170,6 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
           </a>
         </div>
       </aside>
-      
-      {/* Overlay for mobile */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 md:hidden" 
-          onClick={toggleSidebar}
-          aria-hidden="true"
-        />
-      )}
     </>
   );
 };

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Shield, Menu, X } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
 interface NavbarProps {
@@ -9,7 +9,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ onSectionChange, activeSection }: NavbarProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scrolling effect
@@ -26,10 +25,6 @@ const Navbar = ({ onSectionChange, activeSection }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const navLinks = [
     { name: 'About', href: 'about' },
     { name: 'Skills', href: 'skills' },
@@ -41,7 +36,6 @@ const Navbar = ({ onSectionChange, activeSection }: NavbarProps) => {
 
   const handleNavClick = (sectionId: string) => {
     onSectionChange(sectionId);
-    setIsMenuOpen(false);
   };
 
   return (
@@ -77,35 +71,11 @@ const Navbar = ({ onSectionChange, activeSection }: NavbarProps) => {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Navigation Button */}
-        <div className="md:hidden flex items-center gap-4">
+        {/* Mobile Theme Toggle (without hamburger menu) */}
+        <div className="md:hidden">
           <ThemeToggle />
-          <button onClick={toggleMenu} className="text-cyber-light focus:outline-none">
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-md shadow-lg">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <button 
-                key={link.name} 
-                onClick={() => handleNavClick(link.href)}
-                className={`nav-link py-2 px-4 text-left rounded-lg ${
-                  activeSection === link.href
-                    ? 'bg-cyber-primary/20 text-cyber-primary'
-                    : 'hover:bg-cyber-primary/10'
-                }`}
-              >
-                {link.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
