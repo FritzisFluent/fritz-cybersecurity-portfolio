@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import Sidebar from "@/components/Layout/Sidebar";
+import Navbar from "@/components/Layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
@@ -23,7 +24,7 @@ const Index = () => {
   // Set dark mode as default when page loads
   useEffect(() => {
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   // Handle section change with animation
   const handleSectionChange = (sectionId: string) => {
@@ -52,7 +53,7 @@ const Index = () => {
         return <About />;
       case "skills":
         return (
-          <div className="pt-0">
+          <div className="pt-0 overflow-x-hidden">
             <Skills />
             <Certifications />
             <Languages />
@@ -74,7 +75,7 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50 dark:bg-cyber-dark">
+    <div className="flex min-h-screen bg-gradient-to-br from-cyber-dark to-black dark:bg-cyber-dark">
       <Sidebar 
         activeSection={activeSection} 
         onSectionChange={handleSectionChange} 
@@ -87,10 +88,15 @@ const Index = () => {
           relative
         `}
       >
+        <Navbar 
+          onSectionChange={handleSectionChange} 
+          activeSection={activeSection}
+        />
+        
         <div className={`
           min-h-screen w-full
-          transition-opacity duration-300
-          ${animating ? "opacity-0" : "opacity-100"}
+          transition-all duration-300
+          ${animating ? "opacity-0 transform translate-y-4" : "opacity-100 transform translate-y-0"}
         `}>
           {renderActiveSection()}
           <Footer />
