@@ -1,8 +1,7 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -101,7 +100,7 @@
     @apply text-slate-900;
   }
 
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .light h6 {
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
     @apply text-cyber-light;
   }
 
@@ -116,7 +115,7 @@
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-6 relative font-display;
+    @apply text-3xl md:text-4xl font-bold mb-6 relative;
   }
 
   .light .section-heading {
@@ -133,7 +132,7 @@
   }
 
   .cyber-card {
-    @apply rounded-2xl p-6 border shadow-lg transition-all duration-300;
+    @apply rounded-lg p-6 border shadow-lg transition-all duration-300;
   }
   
   .light .cyber-card {
@@ -141,7 +140,7 @@
   }
 
   .dark .cyber-card {
-    @apply bg-cyber-terminal/80 border-cyber-primary/20 hover:border-cyber-primary/50 text-cyber-light;
+    @apply bg-cyber-terminal border-cyber-primary/20 hover:border-cyber-primary/50 text-cyber-light;
   }
   
   .skill-pill {
@@ -183,65 +182,13 @@
   .badge {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium;
   }
-  
-  /* New styles for sidebar web app layout */
-  .section-transition {
-    @apply transition-all duration-300 ease-in-out;
-  }
-  
-  .section-enter {
-    @apply opacity-0 transform translate-y-4;
-  }
-  
-  .section-enter-active {
-    @apply opacity-100 transform translate-y-0;
-  }
-  
-  .section-exit {
-    @apply opacity-100 transform translate-y-0;
-  }
-  
-  .section-exit-active {
-    @apply opacity-0 transform translate-y-4;
-  }
-
-  /* New glassmorphism and high-tech effects */
-  .shadow-glow {
-    @apply shadow-[0_0_15px_rgba(30,136,229,0.3)];
-  }
-
-  .shadow-glow-sm {
-    @apply shadow-[0_0_10px_rgba(30,136,229,0.2)];
-  }
-
-  .shadow-glow-lg {
-    @apply shadow-[0_0_25px_rgba(30,136,229,0.4)];
-  }
-
-  .cyber-grid {
-    @apply w-full h-full opacity-10;
-    background-image: linear-gradient(to right, rgba(30,136,229,0.1) 1px, transparent 1px),
-                     linear-gradient(to bottom, rgba(30,136,229,0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: grid-movement 15s linear infinite;
-  }
-
-  @keyframes grid-movement {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 50px 50px;
-    }
-  }
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-.dark ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   @apply bg-cyber-dark;
 }
 
@@ -249,15 +196,10 @@
   @apply bg-slate-200;
 }
 
+.dark ::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
 ::-webkit-scrollbar-thumb {
   @apply bg-cyber-primary/30 rounded hover:bg-cyber-primary/50 transition-all;
-}
-
-/* Add font definitions */
-.font-display {
-  font-family: 'Orbitron', sans-serif;
-}
-
-.font-sans {
-  font-family: 'Inter', sans-serif;
 }

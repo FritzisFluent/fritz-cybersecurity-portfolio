@@ -46,23 +46,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-cyber-terminal relative pt-20 pb-16 md:pb-24 px-4 md:px-8">
-      <div className="container mx-auto">
+    <section id="skills" className="bg-cyber-terminal relative">
+      <div className="container mx-auto px-4">
         <h2 className="section-heading">Skills</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillsData.map((skill, index) => (
-            <div 
+            <SkillCard 
               key={index}
-              className="animate-fade-in opacity-0"
-              style={{ animationDelay: `${0.1 * index}s` }}
-            >
-              <SkillCard 
-                title={skill.title}
-                icon={skill.icon}
-                skills={skill.skills}
-              />
-            </div>
+              title={skill.title}
+              icon={skill.icon}
+              skills={skill.skills}
+            />
           ))}
         </div>
       </div>

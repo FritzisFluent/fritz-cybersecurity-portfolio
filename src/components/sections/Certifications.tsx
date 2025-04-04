@@ -1,6 +1,5 @@
 
 import CertificationCard from '../ui/CertificationCard';
-import { Award } from 'lucide-react';
 
 const Certifications = () => {
   const certifications = [
@@ -28,7 +27,7 @@ const Certifications = () => {
   ];
   
   return (
-    <section id="certifications" className="bg-cyber-terminal relative pt-4 pb-16 md:pb-24">
+    <section id="certifications" className="bg-cyber-terminal relative">
       <div className="container mx-auto px-4">
         <h2 className="section-heading">Certifications</h2>
         
@@ -37,7 +36,6 @@ const Certifications = () => {
             <div key={index} className="animate-fade-in opacity-0" style={{ animationDelay: `${0.1 * index}s` }}>
               <CertificationCard 
                 title={cert.title}
-                icon={<Award className="h-5 w-5 text-cyber-secondary" />}
               />
             </div>
           ))}
