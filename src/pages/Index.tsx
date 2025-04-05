@@ -20,8 +20,8 @@ const Index = () => {
     if (savedTheme) {
       setTheme(savedTheme as 'light' | 'dark' | 'system');
     } else {
-      // Default to dark mode if no preference is saved
-      setTheme("dark");
+      // Default to system theme if no preference is saved
+      setTheme("system");
     }
   }, []);
 

@@ -32,13 +32,13 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className={`${resolvedTheme === 'dark' ? 'bg-cyber-terminal border-cyber-primary/30' : 'bg-white border-slate-200'}`}
+        className={`${resolvedTheme === 'dark' ? 'bg-cyber-terminal border-cyber-primary/30' : 'bg-white border-slate-200 shadow-lg'}`}
       >
         <DropdownMenuItem 
           onClick={() => setTheme("light")}
           className={`flex items-center gap-2 cursor-pointer ${
             theme === 'light' 
-              ? 'text-blue-600' 
+              ? 'text-blue-600 font-medium' 
               : resolvedTheme === 'dark' ? 'text-cyber-light' : 'text-slate-700'
           }`}
         >
@@ -49,7 +49,7 @@ export function ThemeToggle() {
           onClick={() => setTheme("dark")}
           className={`flex items-center gap-2 cursor-pointer ${
             theme === 'dark' 
-              ? 'text-cyber-primary' 
+              ? 'text-cyber-primary font-medium' 
               : resolvedTheme === 'dark' ? 'text-cyber-light' : 'text-slate-700'
           }`}
         >
@@ -60,7 +60,7 @@ export function ThemeToggle() {
           onClick={() => setTheme("system")}
           className={`flex items-center gap-2 cursor-pointer ${
             theme === 'system' 
-              ? resolvedTheme === 'dark' ? 'text-cyber-primary' : 'text-blue-600'
+              ? resolvedTheme === 'dark' ? 'text-cyber-primary font-medium' : 'text-blue-600 font-medium'
               : resolvedTheme === 'dark' ? 'text-cyber-light' : 'text-slate-700'
           }`}
         >

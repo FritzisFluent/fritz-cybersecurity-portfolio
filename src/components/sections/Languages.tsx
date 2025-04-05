@@ -34,9 +34,9 @@ const Languages = () => {
   ];
 
   return (
-    <section id="languages" className="bg-cyber-dark relative">
+    <section id="languages" className="bg-white dark:bg-cyber-dark relative">
       <div className="container mx-auto px-4">
-        <h2 className="section-heading">Languages</h2>
+        <h2 className="section-heading pt-8">Languages</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {languages.map((language, index) => (
@@ -49,12 +49,12 @@ const Languages = () => {
                 <span className="text-3xl mr-4">{language.flag}</span>
                 <div>
                   <h3 className="font-bold text-xl">{language.name}</h3>
-                  <p className="text-cyber-light/70">{language.level}</p>
+                  <p className="text-slate-600 dark:text-cyber-light/70">{language.level}</p>
                 </div>
               </div>
-              <div className="w-full bg-cyber-dark/50 rounded-full h-2.5 mt-2">
+              <div className="w-full bg-slate-200 dark:bg-cyber-dark/50 rounded-full h-2.5 mt-2">
                 <div 
-                  className="bg-gradient-to-r from-cyber-primary to-cyber-secondary h-2.5 rounded-full" 
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-cyber-primary dark:to-cyber-secondary h-2.5 rounded-full" 
                   style={{ width: `${language.proficiency}%` }}
                 ></div>
               </div>

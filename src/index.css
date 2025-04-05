@@ -85,7 +85,7 @@
 
   /* Light mode styles */
   .light {
-    @apply bg-slate-50 text-slate-900;
+    @apply bg-white text-slate-900;
   }
 
   /* Dark mode styles */
@@ -152,7 +152,7 @@
   }
   
   .light .cyber-card {
-    @apply bg-white border-blue-100 hover:border-blue-300 text-slate-800 shadow-md;
+    @apply bg-white border-slate-200 hover:border-blue-200 text-slate-800 shadow-md;
   }
 
   .dark .cyber-card {
@@ -233,6 +233,32 @@
   }
 }
 
+/* Responsive fixes */
+@media (max-width: 640px) {
+  .section-heading {
+    @apply text-2xl;
+  }
+  
+  .cyber-card {
+    @apply p-4;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    @apply py-12;
+  }
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
