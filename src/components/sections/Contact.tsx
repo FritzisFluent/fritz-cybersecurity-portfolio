@@ -23,8 +23,8 @@ const Contact = () => {
               
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-500 dark:text-cyber-secondary mr-3" />
-                <a href="mailto:fritzgeraldalexandre7@gmail.com" className="text-slate-700 dark:text-white hover:text-blue-600 dark:hover:text-cyber-primary transition-colors">
-                  fritzgeraldalexandre7@gmail.com
+                <a href="mailto:fritz@fritzisfluent.com" className="text-slate-700 dark:text-white hover:text-blue-600 dark:hover:text-cyber-primary transition-colors">
+                  fritz@fritzisfluent.com
                 </a>
               </div>
               
