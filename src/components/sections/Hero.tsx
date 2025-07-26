@@ -32,11 +32,10 @@ const Hero = () => {
               Fritz Gerald Alexandre
             </h1>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-cyber-primary">
-              Cybersecurity Analyst & Technology Consultant
+              Cybersecurity Analyst | IT Support Engineer | Multilingual Communicator
             </h2>
             <p className="text-xl mb-8 max-w-2xl text-slate-700 dark:text-cyber-light/90">
-              New York-based professional with over 4 years of experience in IT support, incident response, 
-              and securing enterprise environments. CompTIA Security+ and CySA+ certified.
+              I help businesses protect their assets, secure their networks, and resolve complex technical issues—efficiently and globally.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12 sm:mb-0">
               <a 
