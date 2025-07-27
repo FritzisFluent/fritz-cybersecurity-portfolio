@@ -4,6 +4,10 @@ import CertificationCard from '../ui/CertificationCard';
 const Certifications = () => {
   const certifications = [
     {
+      title: "CISSP (Certified Information Systems Security Professional)",
+      iconType: "security" as const
+    },
+    {
       title: "CompTIA Security+",
       iconType: "security" as const
     },

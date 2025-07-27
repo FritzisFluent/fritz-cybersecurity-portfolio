@@ -27,13 +27,13 @@ const CertificationCard = ({ title, issuer, iconType = 'general' }: Certificatio
   };
 
   return (
-    <div className="cyber-card flex items-start transition-all duration-300">
-      <div className="mr-4 mt-1 text-blue-600 dark:text-cyber-primary">
+    <div className="cyber-card flex items-start transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
+      <div className="mr-4 mt-1 text-blue-600 dark:text-cyber-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-blue-700 dark:group-hover:text-cyber-accent">
         {renderIcon()}
       </div>
-      <div>
-        <h3 className="font-bold text-lg">{title}</h3>
-        {issuer && <p className="text-slate-600 dark:text-cyber-secondary text-sm mt-1">{issuer}</p>}
+      <div className="transition-all duration-300 group-hover:translate-x-1">
+        <h3 className="font-bold text-lg group-hover:text-blue-700 dark:group-hover:text-cyber-accent transition-colors duration-300">{title}</h3>
+        {issuer && <p className="text-slate-600 dark:text-cyber-secondary text-sm mt-1 group-hover:text-slate-700 dark:group-hover:text-cyber-light transition-colors duration-300">{issuer}</p>}
       </div>
     </div>
   );
