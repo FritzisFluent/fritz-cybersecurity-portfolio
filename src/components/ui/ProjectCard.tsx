@@ -1,30 +1,49 @@
 
 import { useState } from 'react';
+import { Badge } from '@/components/ui/badge';
 
 interface ProjectCardProps {
   title: string;
   tools: string;
   description: string;
   image: string;
+  category: string;
+  onClick: () => void;
 }
 
-const ProjectCard = ({ title, tools, description, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, tools, description, image, category, onClick }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div 
-      className="cyber-card group relative overflow-hidden flex flex-col h-full"
+      className="cyber-card group relative overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:shadow-xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-primary to-cyber-secondary transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
       
-      <div className="mb-4 overflow-hidden rounded">
+      <div className="mb-4 overflow-hidden rounded relative">
         <img 
           src={image} 
           alt={title}
           className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
         />
+        <Badge 
+          variant="secondary" 
+          className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm"
+        >
+          {category}
+        </Badge>
       </div>
       
       <h3 className="text-xl font-bold mb-2 text-cyber-primary">{title}</h3>
