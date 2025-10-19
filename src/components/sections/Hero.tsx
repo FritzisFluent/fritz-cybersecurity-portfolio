@@ -18,11 +18,13 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Image section */}
           <div className="w-full lg:w-5/12 flex justify-center lg:justify-end animate-fade-in opacity-0" style={{ animationDelay: '0.1s' }}>
-            <img 
-              src="/lovable-uploads/809f1b81-416f-4aca-a0a6-fd08ea24847b.png" 
-              alt="Cybersecurity professional with laptop" 
-              className="rounded-lg shadow-2xl max-w-full lg:max-w-md light:border light:border-slate-200"
-            />
+            <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-md">
+              <img 
+                src="/lovable-uploads/809f1b81-416f-4aca-a0a6-fd08ea24847b.png" 
+                alt="Fritz Gerald Alexandre - Cybersecurity and IT Professional" 
+                className="rounded-lg shadow-2xl w-full h-auto object-cover light:border light:border-slate-200 aspect-square sm:aspect-auto"
+              />
+            </div>
           </div>
           
           {/* Text content */}
